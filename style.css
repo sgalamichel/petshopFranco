@@ -55,7 +55,7 @@
 }
 
 .img5 {
-  background-image: url("newImgs/perrojuguete.jpg");
+  background-image: url("newImgs/perrojug.jpg");
   background-size: cover;
   background-position: center 90%;
   width: 100%;
@@ -63,7 +63,7 @@
 }
 
 .img6{
-  background-image: url("newImgs/perrodoc.jpg");
+  background-image: url("newImgs/perrodoctorado.jpg");
   background-size: cover;
   background-position: center 80%;
   width: 100%;
@@ -314,7 +314,7 @@ p {
 
 .mails {
   text-decoration: none;
-  color: rgb(180, 28, 180);
+  color: var(--color1);
 }
 
 /*--------------FOOTER----------------*/
@@ -492,11 +492,11 @@ label {
 /*-------------CARDS---------------*/
 
 .bg-color1 {
-  background-color: var(--color1);
+  background-color:rgb(236, 166, 166)
 }
 
 .body-prod {
-  background-color: var(--color50); 
+  background-color: var(--color3); 
 
 }
 
@@ -659,7 +659,7 @@ align-items: center;
     
   }
   .label{
-    width: 20rem;
+    width: 10rem;
   }
 .campoDeTexto{
   width: 15rem;
@@ -721,13 +721,7 @@ align-items: center;
 
 /* img */
 
-.img1{
-  background-image: url("img/img-min-wdt/perropink-min.jpg");
-  background-size: cover;
-  background-position: 60% 85%;
-  width: 100%;
-  height: 50vh;
-}
+
 
 .img7{
   width: 80%;
@@ -767,6 +761,40 @@ align-items: center;
       z-index: 10;
     }
 
+   #headr{
+     padding: 0;
+   }
+
+   .img1 {
+    background-image: url(img/perrotest.jpg);
+    background-size: cover;
+    background-position: center 60%;
+    width: 100%;
+    height: 40vh;
+  }
+
+  .img2 {
+    background-image: url(img/gatorojo.jpg);
+    background-size: cover;
+    background-position: 90% 60%;
+    width: 100%;
+    height: 90vh;
+  }
+
+  .img4 {
+    background-image: url(newImgs/perromarron.jpg);
+    background-size: cover;
+    background-position: 30% 20%;
+    width: 100%;
+    height: 90vh;
+  }
+
+  .img7 {
+    width: 100%;
+    height: 90vh;
+    object-fit:contain;
+    margin-left: 40px;
+  }
 }
 
 /*-----------CARRITO---------- */
@@ -775,10 +803,17 @@ align-items: center;
 #carro {
   position: fixed;
   right: 0;
-  margin-right: 4px;
-  margin-top: 57px;
+  top: 50vh;
   color: white;
+  background-color: black;
+  height: 33.175px;
+  padding: .2rem;
+  z-index: 2;
 }
+
+/* #carro span {
+  ;
+} */
 
 #cantidadcarro{
   text-align: start;
@@ -788,4 +823,89 @@ align-items: center;
 
 .colorStrong{
   color: #98bfb2;
+}
+
+.card{
+
+  border-radius: 0.3rem !important;
+}
+
+/*------------------- responsive 320px---------------------- */
+
+@media only screen and (max-width: 320px ){
+  .img1 {
+    background-image: url(img/perropink-min.jpg);
+    background-size: cover;
+    background-position: center 80%;
+    width: 100%;
+    height: 40vh;
+  }
+
+  .img2 {
+    background-image: url(img/gatorojomin.jpg);
+    background-size: cover;
+    background-position: center 60%;
+    width: 100%;
+    height: 90vh;
+  }
+
+  .img3 {
+    background-image: url(img/perrorosado-min.jpg);
+    background-size: cover;
+    background-position: center 20%;
+    width: 100%;
+    height: 90vh;
+  }
+
+  .img4 {
+    background-image: url(img/perromarron-min.jpg);
+    background-size: cover;
+    background-position: center 20%;
+    width: 100%;
+    height: 90vh;
+  }
+
+  .img7{
+    display: none;
+  }
+
+  .containerPadreFormulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+  }
+
+  .subcontenedorFormulario {
+    width: 100%;
+    height: 86vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.247);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(2px);
+    border-color: white;
+    border: 6px;
+    border-radius: 15px;
+  }
+
+  .campoDeTexto{
+    width: 10rem !important;
+    height: 5rem;
+  }
+
+  .send{
+    width: 40vw;
+    height: 16vh;
+    position: relative;
+    right: -85px;
+    bottom: -36px;
+    
+  }
+  .textPService{
+    text-align: left;
+  }
 }

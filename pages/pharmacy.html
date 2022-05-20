@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/fv.png" type="image/x-icon">
+    <meta name="keywords" content="petshop, petshop franco, caballito, buenos aires, argentina, mascotas, perros, gatos, medicamentos, juguetes">
+    <meta name="description" content="Petshop Franco, tienda de mascotas, cuidado y bienestar animal">
+    <link rel="shortcut icon" href="../img/fv.png" type="image/x-icon">
     <title>Farmacia</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
@@ -105,7 +107,7 @@
                             <label class="mb-3 ">
                                 Cantidad <input type="number" min="1" :max="product.stock" value="1">
                             </label>
-                            <input type="submit" class="btn bg-success text-light" value="Agregar al Carrito" v-on:click="agregarCarrito(product)">
+                            <input type="submit" class="btn bg-warning text-light" value="Agregar al Carrito" v-on:click="agregarCarrito(product)">
                         </div>
                     </div>
                 </div>
@@ -122,8 +124,8 @@
               <i class="fa-solid fa-truck service__item__icon fa-3x"></i>
               <div>
                   <h3>ENVIOS SIN CARGO</h3>
-                  <p >Envíos sin cargo con nuestro propio sistema de distribución 
-                  <a href="./zonas.html" class="a-linked"> chequea </a> las zonas de cobertura.</p>
+                  <p class="textPService">Envíos sin cargo con nuestro propio sistema de distribución 
+                    chequea  las <a href="./zonas.html" class="mails message"> zonas de cobertura. </a></p>
               </div>
           </div>
 
@@ -131,7 +133,7 @@
               <i class="fa-solid fa-credit-card service__item__icon  fa-3x"></i>
               <div>
                   <h3 >PAGOS</h3>
-                  <p >En efectivo con un 10% de descuento o con tarjetas de crédito/débito, mercadopago</p>
+                  <p class="textPService">En efectivo con un 10% de descuento o con tarjetas de crédito/débito, mercadopago</p>
               </div>
           </div>
 
@@ -140,7 +142,7 @@
               <i class="fa-solid fa-clipboard-check service__item__icon fa-3x"></i>
               <div>
                   <h3 >PRODUCTOS SELLADOS</h3>
-                  <p >100% originales, sellados de fábrica</p>
+                  <p class="textPService">100% originales, sellados de fábrica</p>
               </div>
           </div>
 
@@ -148,7 +150,7 @@
               <i class="fa-brands fa-whatsapp-square service__item__icon fa-3x"></i>
               <div>
                   <h3 >CENTRO DE ATENCIÓN</h3>
-                  <p >Atención directa por Whatsapp para mayoristas y minoristas</p>
+                  <p class="textPService">Atención directa por Whatsapp para mayoristas y minoristas</p>
               </div>
           </div>
 

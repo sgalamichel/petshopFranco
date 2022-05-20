@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="petshop, petshop franco, caballito, buenos aires, argentina, mascotas, perros, gatos, medicamentos, juguetes">
+    <meta name="description" content="Petshop Franco, tienda de mascotas, cuidado y bienestar animal">
     <link rel="shortcut icon" href="img/fv.png" type="image/x-icon">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- CSS -->
@@ -15,7 +17,7 @@
   <div id="app">
     <main class="container-fluid w-100 p-0">
 
-      <header class="container-fluid img1 w-100 d-flex flex-column ">
+      <header id="headr" class="container-fluid img1 w-100 d-flex flex-column">
 
           <nav class="navbar navbar-expand-lg navbar-light w-100  ">
               <div class="container-fluid">
@@ -64,9 +66,10 @@
           <div>
               <h2 >Quienes somos?</h2>  
           </div>
-          <div><p>Somos una pequeña tienda organica ubicada en el barrio de Caballito (CABA) <strong class="colorStrong"> enfocada en el bienestar y salud animal</strong></p>
-              <p>Petshop Franco nacio a madiados del 2021. El nombre se lo debemos a nuestro querido Schnauzer Franco.</p>
-              <p>Queremos ayudarte a <strong class="colorStrong"> cuidar y consentir a tu mascota </strong> por eso en nuestras secciones de farmacia y juguetes <strong class="colorStrong">vas a encontrar lo que estas buscando </strong> y si no lo encontras, dejanos tu <a href="#formulario" class="message mails"><strong>mensaje</strong></a> y nos pondremos en contacto contigo para ayudarte y/o asesorate. </p>
+          <div>
+            <p>Somos una pequeña tienda organica ubicada en el barrio de Caballito (CABA) <strong class="colorStrong"> enfocada en el bienestar y salud animal</strong></p>
+            <p>Petshop Franco nacio a madiados del 2021. El nombre se lo debemos a nuestro querido Schnauzer Franco.</p>
+            <p>Queremos ayudarte a <strong class="colorStrong"> cuidar y consentir a tu mascota </strong> por eso en nuestras secciones de farmacia y juguetes <strong class="colorStrong">vas a encontrar lo que estas buscando </strong> y si no lo encontras, dejanos tu <a href="#formulario" class="message mails"><strong>mensaje</strong></a> y nos pondremos en contacto contigo para ayudarte y/o asesorate. </p>
           </div>
         </div>
 
@@ -82,7 +85,7 @@
               <h2 class="h2Formulario">¿Tenés más dudas? ¡Contactanos!</h2>
               <form @submit.prevent id="formularioLoco">
                 <!-- <p class="pFormulario">Tus datos</p> -->
-                <div class=" d-flex justify-content-between label" >
+                <div class=" d-flex justify-content-between label" id="labelForm" >
                     <label>
                       Nombre
                     <input v-model= "ingresoNombre" required class="form-control" id="la" type="text" name="nombre" >
@@ -121,7 +124,7 @@
                     </div>
                 </div>
                 
-                <div class=" containerComentario mb-2">
+                <div class=" containerComentario mb-2 d-flex justify-content-between">
                     <label class="contenedorCampoTexto">
                       Comentario
                       <textarea required v-model="ingresoComentario" class="form-control campoDeTexto " name="comentario" placeholder="Necesito información sobre..." ></textarea>
