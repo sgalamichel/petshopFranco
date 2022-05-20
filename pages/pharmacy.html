@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" id="pharmacy">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/fv.png" type="image/x-icon">
+    <title>Farmacia</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body class="contenedor">
+  <div id="app">
+
+    <header class="container-fluid img6 w-100 d-flex flex-column ">
+
+      <nav class="navbar navbar-expand-lg navbar-light w-100">
+          <div class="container-fluid">
+            <a class="navbar-brand classA" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <div class="container w-25 p-0 m-0">
+                  <a class="navbar-brand classA" href="#">
+                    <img src="/img/logo.png">
+                  </a>
+                </div>
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <li class="nav-item">
+                  <a class="nav-link classA" aria-current="page" href="../index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link classA" href="toys.html">Juguetes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link classA" href="pharmacy.html">Farmacia</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link classA" href="zonas.html">Envios</a>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <input v-model="busqueda" class="form-control me-2 input1" type="search" placeholder="Escriba aqui......" aria-label="Search">
+
+                {{searchMedicines}}
+              </form>
+            </div>
+          </div>
+      </nav> 
+
+      <!-- carro -->
+      <div id="carro">
+        <span class="material-icons" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight">
+          shopping_cart
+        </span>
+      </div>
+
+    </header>
+
+
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel">Carrito</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="row">
+          <div class="column" v-if="carrito.length > 0" v-for="item in carrito">
+            <div class="card" style="width: 18rem;">
+              <img :src="item.imagen" class="card-img-top" :alt="item.nombre">
+              <div class="card-body">
+                <h5 class="card-title">{{item.nombre}}</h5>
+                <p class="card-text" id="cantidadcarro">Cantidad: {{item.cantidad}}</p>
+                <button class="btn btn-danger" v-on:click="sacarCarrito(item)">Restar unidad</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  
+    
+    <section class="body-prod">
+      <div class="container-fluid">
+        <div class="row ">
+            <!-- <div class="col-12 d-flex justify-content-center">
+                <h2 class="mt-2 mb-2">Farmacia</h2>
+            </div> -->
+
+            <div class="d-flex flex-wrap gap-3 justify-content-center p-2">
+                <div v-for="product in productosFiltrados" class="card m-1 scale" style="width: 18rem;">
+                    <img class="card-img-top" :src="product.imagen" width="400" height="300">
+                    <div class="card-body d-flex flex-column justify-content-between align-items-center bg-color1">
+                        <h5 class="card-title">{{product.nombre}}</h5>
+                        <p class="card-text">Precio: ${{product.precio}}</p>
+                        <div class="d-flex flex-column justify-content-between align-items-center">
+                            <span v-if="5 > product.stock" class="text-white bg-danger mb-3 p-2 rounded">Últimas unidades</span>
+                            <label class="mb-3 ">
+                                Cantidad <input type="number" min="1" :max="product.stock" value="1">
+                            </label>
+                            <input type="submit" class="btn bg-success text-light" value="Agregar al Carrito" v-on:click="agregarCarrito(product)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section class="service container-fluid ">
+
+      <article class="service__container ">
+          <div class="service__item ">
+              <i class="fa-solid fa-truck service__item__icon fa-3x"></i>
+              <div>
+                  <h3>ENVIOS SIN CARGO</h3>
+                  <p >Envíos sin cargo con nuestro propio sistema de distribución 
+                  <a href="./zonas.html" class="a-linked"> chequea </a> las zonas de cobertura.</p>
+              </div>
+          </div>
+
+          <div class="service__item">
+              <i class="fa-solid fa-credit-card service__item__icon  fa-3x"></i>
+              <div>
+                  <h3 >PAGOS</h3>
+                  <p >En efectivo con un 10% de descuento o con tarjetas de crédito/débito, mercadopago</p>
+              </div>
+          </div>
+
+
+          <div class="service__item ">
+              <i class="fa-solid fa-clipboard-check service__item__icon fa-3x"></i>
+              <div>
+                  <h3 >PRODUCTOS SELLADOS</h3>
+                  <p >100% originales, sellados de fábrica</p>
+              </div>
+          </div>
+
+          <div class="service__item ">
+              <i class="fa-brands fa-whatsapp-square service__item__icon fa-3x"></i>
+              <div>
+                  <h3 >CENTRO DE ATENCIÓN</h3>
+                  <p >Atención directa por Whatsapp para mayoristas y minoristas</p>
+              </div>
+          </div>
+
+      </article>
+
+    </section>
+
+
+
+
+    <footer class="container-fluid footer">
+
+      <div class="box-foot " >
+
+          <div class="social-media m-3">
+
+            <p class="text-center p-linked ">Categorias: </p>
+            <div><a href="../index.html"  class="a-linked classA">Home</a></div>
+            <div><a href="toys.html" class="a-linked classA">Juguetes</a></div>
+            <div><a href="pharmacy.html" class="a-linked classA">Farmacia</a></div>
+            <div><a href="zonas.html" class="a-linked classA">Zonas de envio</a></div>
+        
+          </div>
+
+          <div class="icons-footer text-center mt-3  ">
+              <div>
+                  <div class="d-flex  justify-content-evenly m-5">
+                    <i class="fa-brands fa-facebook  fa-2x"></i>
+                    <i class="fa-brands fa-instagram fa-2x"></i>
+                  </div>
+
+                  <div >
+                    <p class="copy"> &copy; 2022 | Todos los derechos reservados</p>
+                  </div>
+              </div> 
+          </div>
+
+
+          <div class="text-foot  mt-3 text-center">
+              <p><strong class="p-linked  p-3"> Contacto:</strong> 1165238954</p>
+              <div>
+                <p><strong class="p-linked  p-3"> Donde estamos?</strong></p>
+                  <iframe class="mb-3" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26264.654508646305!2d-58.43670155212638!3d-34.62737274899806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca429815227f%3A0x5d302e497c2cda87!2sR%C3%ADo%20de%20Janeiro%20300%2C%20C1405CCB%20CABA!5e0!3m2!1sen!2sar!4v1652370838576!5m2!1sen!2sar" width="100%" height="100" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+          </div>
+
+      </div>
+
+      
+    </footer>
+    </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <script src="https://kit.fontawesome.com/2afefb8f2b.js" crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/vue@3"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script src="/main.js"></script>
+</body>
+</html>

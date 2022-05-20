@@ -1,0 +1,64 @@
+
+
+Hola! Recurro a vos porque me dijeron que sos la persona indicada para hacerme esta web.
+Te cuento: tengo un pet-shop que se llama “Franco” (por mi perro) y me gustaría hacer una
+web para mis clientes.
+
+- No tengo logo, asi que podés usar como logo una imagen linda que encuentres en la web
+de algún perro Schnauzer. O si tenés aptitud para el diseño y me querés diseñar algo,
+adelante. Pero se me ocurre que en el encabezado deberia como minimo haber una
+imagen de un Schnauzer y el nombre de la tienda.
+
+1. HACER LOGO  PARA ENCABEZADO JUNTO CON EL NOMBRE
+
+- Tendría 4 páginas, la principal donde podrías poner una o dos fotos lindas de perros, gatos,
+etc. y algún texto que diga “Bienvenidos a mi tienda” y un breve párrafo contando
+nuestra historia, dónde estamos, etc.
+
+2. HOME: FOTO DE PERROS GATOS + TEXTO
+
+- Si querés agregar algún mapa de Google Maps buenisimo! Nuestra dirección es Rio de
+Janeiro 300 (Caballito). Lo que quieras agregar, bienvenido.
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26264.654508646305!2d-58.43670155212638!3d-34.62737274899806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca429815227f%3A0x5d302e497c2cda87!2sR%C3%ADo%20de%20Janeiro%20300%2C%20C1405CCB%20CABA!5e0!3m2!1sen!2sar!4v1652370838576!5m2!1sen!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+- Después habría una página de “Contáctenos” donde podrías poner un formulario para que el
+cliente ingrese nombre y apellido, teléfono, que indique si tiene perro y/o gato y una
+casilla para comentarios. Y que el botón de envío del formulario solo haga que aparezca
+un cartelito que diga que se envió y muchas gracias por escribirnos, o algo así, por ahora
+no hagas nada con el formulario. Si se te ocurre algún otro campo además de los que te
+puse (nombre, mascota, etc) agregalo!
+
+3.NOMBRE Y APELLIDO - TELEFONO - TIENE PERRO O GATO? - DESEA DEJARNOS ALGUN COMENTARIO?
+BOTON DE ENVIO --> CARTEL "MENSAJE ENVIAJO. MUCHAS GRACIAS POR CONTACTARNOS!"
+
+- Después habría otros dos páginas, una “Farmacia” y otra “Juguetes”, ahí tenés que poner
+algunas fotos ilustrativas (de farmacia o de juguetes) y en cada una tenés que mostrar
+artículos. Para esto tenés que hacer un pedido a una API que te va a devolver un JSON con
+aproximadamente 15 artículos, algunos juguetes y otros medicamentos.
+ Los medicamentos los tenes que mostrar en la página que corresponde y los juguetes en la
+otra. Hacele un cuadradito donde esté la imagen (te viene en ese JSON la dirección de la
+imagen), el nombre del artículo, el precio, hacemelo bonito!!! :) Como si fuera un
+MercadoLibre, viste? Asi, como una grilla con articulos, colores, linda letra, esmerate!
+
+4.FARMACIA Y JUGUETES -->AGREGAR FOTOS Y DEMAS DESDE LA API. 
+
+- Y te pido algo: tendrias que lograr que en aquellos articulos (medicamentos o juguetes)
+que tienen menos de 5 (cinco) unidades de stock aparezca un cartel rojo que diga
+“Ultimas unidades!!!” asi fomentamos la venta!!
+
+5. ARTICULOS CON MENOS DE 5 --->CARTEL ROJO "¡ULTIMAS UNIDADES!"
+
+Necesitaría tenerla lista para el lunes 20/05/2022 a las 18:00 hs Bs As
+Te paso el endpoint de la API: https://apipetshop.herokuapp.com/api/articulos
+Obvio lo que quieras agregar (filtros, buscadores, animaciones, carrito de compras) ¡es
+todo bienvenido!
+Yo como mínimo espero algo lindo, funcional y dinámico.
+¡Gracias!
+
+
+--------------------------------------------------
+INDEX
+
+Search ---> v-model="textoIngresado"  +  {{buscar}}
+

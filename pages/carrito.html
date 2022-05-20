@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/fv.png" type="image/x-icon">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="logoCompleto ms-4 mt-2 mb-2">
+                <a href="index.html" >
+                    <img src="./img/logo-white.png" style="width: 8rem; height: 8rem;"
+                        alt="logo" />
+                </a>
+                <h1 class="ms-5">Franco - Pet Shop</h1>
+            </div>
+    
+            <div class="col-2 u-pull-right" id="app">
+                <ul>
+                    <li class="submenu">
+                        <img src="img/cart.png" alt="">
+                        <div id="carro">
+                            <p class="vacio">carrito vacio</p>
+                            <table id="lista-carrito" class="u-full-width">
+                                <thead>
+                                    <tr>
+                                        <th>Producto </th>
+                                        <th>Cantidad </th>
+                                        <th>Precio </th>
+                                    </tr>
+                                </thead>
+                                <tbody>				
+                                </tbody>
+                            </table>
+                            <a href="#" id="vaciar-carrito"
+                            class="button u-full-width" v-on:click="vaciarCarrito()">vaciar carrito</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    
+            <!-- <a class="carrito p-2" href="carrito.html">
+                
+                
+                
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44"
+                        height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <circle cx="6" cy="19" r="2" />
+                        <circle cx="17" cy="19" r="2" />
+                        <path d="M17 17h-11v-14h-2" />
+                        <path d="M6 5l14 1l-1 7h-13" />
+                    </svg> -->
+    
+                    <!-- <div id="carro">					
+                        <table id="lista-carrito" class="u-full-width">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
+                        <a href="#" id="vaciar-carrito"
+                        class="button u-full-width">vaciar carrito</a>
+                    </div> 
+    
+                </div>
+            </a>-->
+        </header>
+        <nav class="navbar navbar-expand-sm navContenedor">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <line x1="4" y1="6" x2="20" y2="6" />
+                    <line x1="4" y1="12" x2="20" y2="12" />
+                    <line x1="4" y1="18" x2="20" y2="18" />
+                </svg>
+            </button>
+            <!-- enlaces -->
+            <div class="collapse navbar-collapse navContenedor" id="opciones">   
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                    <div class="botonesNav" onclick="window.location ='index.html'">
+                        <a class="flex-sm-fill text-sm-center nav-link" href ="index.html">
+                            <h3>Home</h3>
+                        </a>
+                    </div>
+                </li>
+                <div class="verticalLine"></div>
+                <li class="nav-item">
+                    <div class="botonesNav" onclick="window.location ='contact.html'">
+                        <a class="flex-sm-fill text-sm-center nav-link" href="contact.html">
+                            <h3>Contacto</h3>
+                        </a>
+                    </div>
+                </li>
+                <div class="verticalLine"></div>
+                <li class="nav-item">
+                    <div class="botonesNav1" onclick="window.location ='juguetes.html'">
+                        <a class="flex-sm-fill text-sm-center nav-link" href="juguetes.html">
+                            <h3>Juguetes</h3>
+                        </a>
+                    </div>
+                </li>
+                <div class="verticalLine"></div>
+                <li class="nav-item">
+                    <div class="botonesNav1" onclick="window.location ='#'">
+                        <a class="flex-sm-fill text-sm-center nav-link" href="#">
+                            <h3>Farmacia</h3>
+                        </a>
+                    </div>
+                </li>            
+              </ul>
+            </div>
+          </nav>
+        <main>
+            <h2>CARRITO DE COMPRAS</h2>
+    
+            <div id="app">
+                <ul>
+                    <li class="d-flex flex-column align-items-center " v-if="carrito.length == 0">
+                        <h3 class="text-align-center"> EL CARRITO ESTÁ VACIO </h3>
+                        <img src="img/perrito-cara-triste.jpg" alt="">
+                        <a type="button" class="btn btn-warning m-3" href="index.html"> Volver a comprar</a>
+                    </li>                      
+                </ul>    
+                
+            </div>
+                 
+    
+        </main>
+
+
+
+
+
+
+
+
+
+    <footer class="container-fluid footer">
+
+        <div class="box-foot d-flex justify-content-between" >
+  
+            <div class="social-media flex-column mt-3 mb-3">
+                <p class="p-linked">Website realizada por: </p>
+                <div><i class="fa-brands fa-linkedin 10x  fa-lg"></i><a href="https://www.linkedin.com/in/camila-colman-recalde-08a53719a/ " target="_blank"  class="a-linked"> Camila Colman</a> </div>
+                <div><i class="fa-brands fa-linkedin 10x  fa-lg"></i><a href="#" class="a-linked"> Celeste Merlos</a></div>
+                <div><i class="fa-brands fa-linkedin 10x  fa-lg"></i><a href="https://www.linkedin.com/in/nahuel-saavedra-19126b216/" target="_blank" class="a-linked"> Nahuel Saavedra</a></div>
+                <div><i class="fa-brands fa-linkedin 10x  fa-lg"></i><a href="https://www.linkedin.com/in/galamichels/" target="_blank" class="a-linked"> Sofia Michel</a></div>
+            </div>
+  
+            <div class="icons-footer text-center mt-3  d-flex align-items-end">
+                <div>
+                    <div class="d-flex  justify-content-evenly m-5">
+                      <i class="fa-brands fa-facebook  fa-2x"></i>
+                      <i class="fa-brands fa-instagram fa-2x"></i>
+                    </div>
+                    <div >
+                      <p class="d-flex  align-items-end"> &copy; 2022 | Todos los derechos reservados</p>
+                    </div>
+                </div> 
+            </div>
+  
+            <div class="text-foot  mt-3">
+                <p class="text-center"><strong class="p-linked">Contactos</strong> 1165238954</p>
+                <div>
+                    <iframe class="mb-23" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26264.654508646305!2d-58.43670155212638!3d-34.62737274899806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca429815227f%3A0x5d302e497c2cda87!2sR%C3%ADo%20de%20Janeiro%20300%2C%20C1405CCB%20CABA!5e0!3m2!1sen!2sar!4v1652370838576!5m2!1sen!2sar" width="100%" height="100" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+  
+        </div>
+  
+        
+      </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script src="main.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+</body>
+</html>
